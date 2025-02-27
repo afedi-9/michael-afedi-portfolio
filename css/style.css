@@ -14,7 +14,7 @@
   --main-color: #033a80;
   --bg-color: #fff;
   --text-color: #0f0c27;
-  --hover: hsl(27, 88%, 41%);
+  --hover: #E94808;
  
   --big-font: 3.2rem;
   --medium-font: 1.8rem;
@@ -70,13 +70,18 @@ header.shadow {
   box-shadow: 0 0 4px rgb(14 55 54 / 15%);
 }
 .logo {
-  font-size: 1.61rem;
+  font-size: 2.61rem;
   font-weight: 600;
   color: var(--text-color);
   /* added */
   
   /* added */
 
+}
+.logo span{
+  font-size: 3.5rem;
+  color: #E94808;
+  font-weight: bolder;
 }
 .navbar {
   display: flex;
@@ -411,7 +416,7 @@ form textarea {
   color: #fff;
 }
 .copyright a{
-  color: #e6c405;
+  color: #EA4809;
 }
 /* Making Responsive */
 @media (max-width: 991px) {

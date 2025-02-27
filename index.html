@@ -13,6 +13,7 @@
    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
 
   <!---------- font awesome link-------->
+  <script src="./js/script.js" defer></script>
   <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
   <script src="https://kit.fontawesome.com/96336c4c63.js" crossorigin="anonymous"></script>
   
@@ -21,7 +22,7 @@
 <body>
     <!-- Navbar -->
     <header>
-        <a href="#" class="logo">🧭NanoC≎des</a>
+        <a href="#" class="logo text-2xl font-bold drop-shadow-xl animate-bounce">Nano <span>C≎</span>des</a>
  
         <div class="bx bx-menu" id="menu-icon"></div>
  
@@ -48,14 +49,14 @@
             <img src= "./images/about-removebg-preview.png"  alt="Image of Michael Afedi">
             
         </div>
-        <div class="home-text">
+        <div class="home-text font-semibold">
             <span>Hello, I'm</span>
             <h1>Michael Afedi</h1>
-            <h2>Frontend Developer  <p>
-                Backend Developer 
+            <h2 class=" font-semibold tracking-[10px]">Frontend Developer  <p>
+                <!-- Backend Developer  -->
             </p></h2>
-            <p>With expertise in both front-end and  <br> back-end development. <br></p>
-            <a href="#contact" class="btn">Contact Me</a>
+            <p>With expertise in  front-end development. <br></p>
+            <a href="#contact" class="btn animate-bounce font-semibold tracking-[5px]">Hire Me </a>
         </div>
  
     </section>
@@ -93,60 +94,137 @@
                     </div>
                 </div>
                 <a href="./CV/MICHAEL AFEDI_CV1.pdf" class="btn">Download Cv</a>
-                <a class="h-btn animate-bounce">Hire me</a>
+                
             </div>
             
         </div>
     </section>
-    <!-- Skills -->
-    <section class="skills" id="skills">
+    <!-- Skills Section -->
+<!-- Skills Section -->
+<!-- Skills Section -->
+<!-- Skills Section -->
+<!-- Skills Section -->
+<!-- Skills Section -->
+<!-- Skills Section -->
+<section class="skills py-16 bg-white text-gray-900" id="skills">
+    <div class="text-center">
+        <h2 class="text-3xl font-semibold text-teal-600">Skills</h2>
+    </div>
+    
+    <div class="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] justify-center gap-6 mt-10 px-8">
+        <!-- Technical Skills -->
+        <div class="skills-box bg-gray-100 p-6 w-[280px] flex flex-col items-center text-center rounded-lg border-b-4 border-teal-500 shadow-lg hover:bg-teal-100 transition duration-300">
+            <i class="bx bx-code-alt text-6xl text-teal-600 pt-6 transition duration-300 hover:text-green-500"></i>
+            <h3 class="text-lg font-semibold mt-4 transition duration-300 hover:text-teal-800">HTML & CSS (Tailwind)</h3>
+        </div>
+
+        <div class="skills-box bg-gray-100 p-6 w-[280px] flex flex-col items-center text-center rounded-lg border-b-4 border-teal-500 shadow-lg hover:bg-teal-100 transition duration-300">
+            <i class="bx bx-layer text-6xl text-teal-600 pt-6 transition duration-300 hover:text-green-500"></i>
+            <h3 class="text-lg font-semibold mt-4 transition duration-300 hover:text-teal-800">JavaScript</h3>
+        </div>
+
+        <div class="skills-box bg-gray-100 p-6 w-[280px] flex flex-col items-center text-center rounded-lg border-b-4 border-teal-500 shadow-lg hover:bg-teal-100 transition duration-300">
+            <i class="bx bxl-react text-6xl text-teal-600 pt-6 transition duration-300 hover:text-green-500"></i>
+            <h3 class="text-lg font-semibold mt-4 transition duration-300 hover:text-teal-800">React.js</h3>
+        </div>
+
+        <div class="skills-box bg-gray-100 p-6 w-[280px] flex flex-col items-center text-center rounded-lg border-b-4 border-teal-500 shadow-lg hover:bg-teal-100 transition duration-300">
+            <i class="bx bx-git-branch text-6xl text-teal-600 pt-6 transition duration-300 hover:text-green-500"></i>
+            <h3 class="text-lg font-semibold mt-4 transition duration-300 hover:text-teal-800">Git & GitHub</h3>
+        </div>
+
+        <!-- Soft Skills -->
+        <div class="skills-box bg-gray-100 p-6 w-[280px] flex flex-col items-center text-center rounded-lg border-b-4 border-teal-500 shadow-lg hover:bg-teal-100 transition duration-300">
+            <i class="bx bx-brain text-6xl text-teal-600 pt-6 transition duration-300 hover:text-green-500"></i>
+            <h3 class="text-lg font-semibold mt-4 transition duration-300 hover:text-teal-800">Problem-Solving</h3>
+        </div>
+
+        <div class="skills-box bg-gray-100 p-6 w-[280px] flex flex-col items-center text-center rounded-lg border-b-4 border-teal-500 shadow-lg hover:bg-teal-100 transition duration-300">
+            <i class="bx bx-group text-6xl text-teal-600 pt-6 transition duration-300 hover:text-green-500"></i>
+            <h3 class="text-lg font-semibold mt-4 transition duration-300 hover:text-teal-800">Collaboration & Communication</h3>
+        </div>
+
+        <div class="skills-box bg-gray-100 p-6 w-[280px] flex flex-col items-center text-center rounded-lg border-b-4 border-teal-500 shadow-lg hover:bg-teal-100 transition duration-300">
+            <i class="bx bx-time text-6xl text-teal-600 pt-6 transition duration-300 hover:text-green-500"></i>
+            <h3 class="text-lg font-semibold mt-4 transition duration-300 hover:text-teal-800">Time Management</h3>
+        </div>
+
+        <div class="skills-box bg-gray-100 p-6 w-[280px] flex flex-col items-center text-center rounded-lg border-b-4 border-teal-500 shadow-lg hover:bg-teal-100 transition duration-300">
+            <i class="bx bx-bulb text-6xl text-teal-600 pt-6 transition duration-300 hover:text-green-500"></i>
+            <h3 class="text-lg font-semibold mt-4 transition duration-300 hover:text-teal-800">Adaptability & Continuous Learning</h3>
+        </div>
+    </div>
+</section>
+
+<!--  -->
+<section class="services" id="services">
         <div class="heading">
-            <h2>Skills</h2>
-            <!-- <span>My Skills</span> -->
+            <h2 class="font-semibold">Skills</h2>
+            <!-- <span> My Services</span> -->
         </div>
-        <!-- Skills Content -->
-        <div class="skills-container">
-            <div class="bars">
-                <!-- Box 1 -->
-                <div class="bars-box">
-                    <h3>HTML</h3>
-                    <!-- <span>85%</span>
-                    <div class="light-bar"></div>
-                    <div class="percent-bar html-bar"></div> -->
-                </div>
-                <!-- Box 2 -->
-                <div class="bars-box">
-                    <h3>CSS</h3>
-                    <!-- <span>80%</span>
-                    <div class="light-bar"></div>
-                    <div class="percent-bar css-bar"></div> -->
-                </div>
-                <!-- Box 3 -->
-                <div class="bars-box">
-                    <h3>JavaScript</h3>
-                    <!-- <span>75%</span>
-                    <div class="light-bar"></div>
-                    <div class="percent-bar js-bar"></div> -->
-                </div>
-                <!-- Box 4 -->
-                <div class="bars-box">
-                    <h3>React</h3>
-                    <!-- <span>55%</span>
-                    <div class="light-bar"></div>
-                    <div class="percent-bar react-bar"></div> -->
-                </div>
-               
+        <div class="services-content">
+            <!-- Box 1 -->
+            <div class="services-box">
+                <i class="bx bx-code-alt" ></i>
+                <h3>HTML</h3>
+                <!-- <a href="#">Learn More</a> -->
             </div>
-            <div class="skills-img">
-                <img src="./images/skils.png" alt="Image of Michael Afedi">
+            <!-- Box 2 -->
+            <div class="services-box">
+                <i class="bx bx-code-alt" ></i>
+                <h3>CSS (Tailwind)</h3>
+                <!-- <a href="#">Learn More</a> -->
+            </div>
+            <!-- Box 3 -->
+            <div class="services-box">
+                <i class="bx bx-layer" ></i>
+                <h3>JavaScript</h3>
+                <!-- <a href="#">Learn More</a> -->
+            </div>
+
+            <div class="services-box">
+                <i class="bx bx-git-branch" ></i>
+                <h3>Git & GitHub</h3>
+                <!-- <a href="#">Learn More</a> -->
+            </div>
+            <div class="services-box">
+                <i class="bxl-react" ></i>
+                <h3>React.js</h3>
+                <!-- <a href="#">Learn More</a> -->
+            </div>
+
+            <div class="services-box">
+                <i class="bx bx-group" ></i>
+                <h3>Collaboration & Communication</h3>
+                <!-- <a href="#">Learn More</a> -->
+            </div>
+            <div class="services-box">
+                <i class="bx bx-time" ></i>
+                <h3>Time Management</h3>
+                <!-- <a href="#">Learn More</a> -->
+            </div>
+
+            <div class="services-box">
+                <i class="bx bx-bulb" ></i>
+                <h3>Adaptability & Continuous Learning</h3>
+                <!-- <a href="#">Learn More</a> -->
             </div>
         </div>
- 
+
+        
     </section>
+<!--  -->
+
+
+
+
+
+
+
     <!-- Services -->
     <section class="services" id="services">
         <div class="heading">
-            <h2>Services</h2>
+            <h2 class="font-semibold">Services</h2>
             <!-- <span> My Services</span> -->
         </div>
         <div class="services-content">
@@ -179,7 +257,7 @@
     <!-- Portfolio -->
     <section class="portfolio" id="portfolio">
         <div class="heading">
-            <h2>Projects</h2>
+            <h2 class="font-semibold">Projects</h2>
             <span>My Recent Work</span>
         </div>
         <div class="portfolio-content">
@@ -218,7 +296,7 @@
     <!-- Contact -->
     <section class="contact" id="contact">
         <div class="heading">
-            <h2>Contact</h2>
+            <h2 class="font-semibold">Contact</h2>
             <span>Let's Work Together</span>
         </div>
         <div class="contact-form">
@@ -245,24 +323,23 @@
     </section>
     <!-- Footer -->
     <div class="footer">
-        <h2>NanoC≎des</h2>
+        <h2 class="font-semibold">NanoC≎des</h2>
         <div class="footer-social">
-            <a href="#"><i class="bx bxl-facebook" ></i></a>
-            <a href=""><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="#"><i class="bx bxl-instagram" ></i></a>
-            <a href="#"><i class="bx bxl-youtube" ></i></a>
+            <a href="https://github.com/"><i class="bx bxl-github"></i></a>
+            <a href="https://wa.link/u4grat"><i class="fa-brands fa-square-whatsapp"></i></a>
+            <a href=""><i class="fa-brands fa-discord"></i></a>
             <a href="https://www.linkedin.com/in/michael-afedi-5a4a02284?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BAoiGP9cNSdyG1lznMiDa1w%3D%3D"><i class="fa-brands fa-linkedin"></i></a>
         </div>
  
     </div>
     <!-- Copyright -->
     <div class="copyright">
-        <p>Create By ©  <a href="">Afedi</a> | All Right Reserved.</p>
+        <p>Create By ©  <a href="" class="font-semibold">Afedi</a> | All Right Reserved.</p>
     </div>
  
  
  
     <!-- Link To JS -->
-    <script src="./js/script.js"></script>
+
 </body>
 </html>
