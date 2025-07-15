@@ -24,19 +24,31 @@
   </div>
     <!-- Navbar -->
     <header>
-        <a href="#" class="logo text-2xl font-bold drop-shadow-xl">Nano <span>C≎</span>des</a>
- 
-        <div class="bx bx-menu" id="menu-icon"></div>
- 
-        <ul class="navbar">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#projects">Project</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <div class="bx bx-moon" id="darkmode"></div>
-        </ul>
+        <div class="header-container">
+            <a href="#home" class="logo">Nano <span>C≎</span>des</a>
+            
+            <!-- Navigation -->
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                    <li class="dark-mode-toggle">
+                        <i class='bx bxs-moon' id="darkmode"></i>
+                    </li>
+                </ul>
+                
+                <!-- Mobile Menu Button -->
+                <button class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
     </header>
     <!-- Home -->
  
@@ -54,9 +66,7 @@
         <div class="home-text font-semibold">
             <span>Hello, I'm</span>
             <h1>Michael Afedi</h1>
-            <h2 class=" font-semibold tracking-[10px]">Frontend Developer  <p>
-                <!-- Backend Developer  -->
-            </p></h2>
+            <h2 class=" font-semibold tracking-[10px]">Frontend Developer</h2>
             <p>With expertise in  front-end development. <br></p>
             <a href="#contact" class="btn animate-bounce font-semibold tracking-[5px]">Hire Me </a>
         </div>
@@ -74,7 +84,7 @@
             <div class="about-grid">
                 <div class="about-content">
                     <div class="about-text">
-                        <h3>My Development Philosophy</h3>
+                        <h3>My Development Mindset</h3>
                         <p class="lead">With a strong foundation in frontend technologies and a passion for creating intuitive user interfaces, I specialize in building responsive and performant web applications that deliver exceptional user experiences.</p>
                         
                         <div class="about-details">
@@ -101,20 +111,7 @@
                             </div>
                         </div>
                         
-                        <div class="about-stats">
-                            <div class="stat-item">
-                                <span class="stat-number">2</span>
-                                <span class="stat-label">Years Experience</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-number">15</span>
-                                <span class="stat-label">Projects Completed</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-number">10</span>
-                                <span class="stat-label">Satisfied Clients</span>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
                 <div class="about-image">
@@ -134,69 +131,102 @@
         </div>
     </section>
     <!-- Skills Section -->
+<!-- Development Mindset Sectio -->
+
+
 <!-- Skills Section -->
-
-<!--  -->
-<section class="services" id="services">
-        <div class="heading">
-            <h2 class="font-semibold">Skills</h2>
-            <!-- <span> My Services</span> -->
+<section class="skills-section" id="skills">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Technical Proficiencies</span>
+            <h2 class="section-title">My Skills</h2>
+            <p class="section-subtitle">Mastering the tools and technologies that power exceptional web experiences</p>
+            <div class="section-divider"></div>
         </div>
-        <div class="services-content">
-            <!-- Box 1 -->
-            <div class="services-box">
-                <i class='bx bxl-html5 '></i>
-                <!-- <i class='bx bxl-css3' ></i> -->
-                <h3>HTML & CSS (Tailwind)</h3>
-                <!-- <a href="#">Learn More</a> -->
-            </div>
-            <!-- Box 2 -->
-            
-            <!-- Box 3 -->
-            <div class="services-box">
-                <i class='bx bxl-javascript'></i>
-                
-                <h3>JavaScript</h3>
-                <!-- <a href="#">Learn More</a> -->
-            </div>
-
-            <div class="services-box">
-                <i class="bx bx-git-branch" ></i>
-                <h3>Git & GitHub</h3>
-                <!-- <a href="#">Learn More</a> -->
-            </div>
-            <div class="services-box">
-                <i class="bx bxl-react" ></i>
-                <h3>React.js</h3>
-                <!-- <a href="#">Learn More</a> -->
-            </div>
-
-            <div class="services-box">
-                <i class="bx bx-brain" ></i>
-                <h3>Problem-Solving</h3>
-                <!-- <a href="#">Learn More</a> -->
-            </div>
-
-            <div class="services-box">
-                <i class="bx bx-group" ></i>
-                <h3>Collaboration & Communication</h3>
-                <!-- <a href="#">Learn More</a> -->
-            </div>
-            <div class="services-box">
-                <i class="bx bx-time" ></i>
-                <h3>Time Management</h3>
-                <!-- <a href="#">Learn More</a> -->
-            </div>
-
-            <div class="services-box">
-                <i class="bx bx-bulb" ></i>
-                <h3>Adaptability & Continuous Learning</h3>
-                <!-- <a href="#">Learn More</a> -->
-            </div>
-        </div>
-
         
-    </section>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class='bx bxl-html5'></i>
+                </div>
+                <h3>HTML & CSS (Tailwind)</h3>
+            </div>
+            
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class='bx bxl-javascript'></i>
+                </div>
+                <h3>JavaScript</h3>
+            </div>
+            
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class='bx bx-git-branch'></i>
+                </div>
+                <h3>Git & GitHub</h3>
+            </div>
+            
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class='bx bxl-react'></i>
+                </div>
+                <h3>React.js</h3>
+            </div>
+            
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class='bx bx-brain'></i>
+                </div>
+                <h3>Problem-Solving</h3>
+            </div>
+            
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class='bx bx-group'></i>
+                </div>
+                <h3>Collaboration & Communication</h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section class="services-section" id="services">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">What I Offer</span>
+            <h2 class="section-title">My Services</h2>
+            <p class="section-subtitle">Delivering exceptional digital solutions tailored to your needs</p>
+            <div class="section-divider"></div>
+        </div>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class='bx bx-code-alt'></i>
+                </div>
+                <h3>Web Development</h3>
+                <p>Building responsive and interactive websites using modern web technologies and best practices.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class='bx bx-mobile-alt'></i>
+                </div>
+                <h3>Responsive Design</h3>
+                <p>Creating websites that look and function perfectly on all devices and screen sizes.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class='bx bxs-paint'></i>
+                </div>
+                <h3>UI/UX Design</h3>
+                <p>Designing intuitive and engaging user interfaces that enhance user experience.</p>
+            </div>
+        </div>
+    </div>
+</section>
 <!--  -->
 
 
@@ -205,39 +235,7 @@
 
 
 
-    <!-- Services -->
-    <section class="services" id="services">
-        <div class="heading">
-            <h2 class="font-semibold">Services</h2>
-            <!-- <span> My Services</span> -->
-        </div>
-        <div class="services-content">
-            <!-- Box 1 -->
-            <div class="services-box">
-                <i class="bx bx-code-alt" ></i>
-                <h3>Web Development</h3>
-                <!-- <a href="#">Learn More</a> -->
-            </div>
-            <!-- Box 2 -->
-            <div class="services-box">
-                <i class='bx bx-desktop'></i>
-                <h3>Frontend Development</h3>
-                <!-- <a href="#">Learn More</a> -->
-            </div>
-            <!-- Box 3 -->
-            <div class="services-box">
-                <i class="bx bx-brush" ></i>
-                <h3>UI/UX Design</h3>
-                <!-- <a href="#">Learn More</a> -->
-            </div>
-
-            <div class="services-box">
-                <i class="bx bxl-wordpress" ></i>
-                <h3>Wordpress Developer</h3>
-                <!-- <a href="#">Learn More</a> -->
-            </div>
-        </div>
-    </section>
+    
     <!-- Projects -->
     <section class="projects" id="projects">
         <div class="container">
@@ -255,6 +253,62 @@
                 <!-- Project 1 -->
                 <div class="project-card" data-category="web">
                     <div class="project-img">
+                        <img src="./images/quickaid.jpg" alt="Dama Teye Art Gallery">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://worldlargesthackthon.netlify.app/" target="_blank" class="project-link">
+                                    <i class='bx bx-link-external'></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>QuickAid</h3>
+                        <p>A secure, AI-powered mental health support platform tailored for military personnel. Features include incident reporting, mental health check-ins, live counselor chat, and offline access.</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="web">
+                    <div class="project-img">
+                        <img src="./images/kasa.png" alt="Dama Teye Art Gallery">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://kasahlingo-project.vercel.app/" target="_blank" class="project-link">
+                                    <i class='bx bx-link-external'></i>
+                                </a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>KasaLingo Gh</h3>
+                        <p>A playful mobile app that teaches Ghanaian languages like Twi, Ewe, and Ga to kids using interactive games, voice recognition, and culturally rich lessons.</p>
+                    </div>
+                </div>
+
+
+                <div class="project-card" data-category="design">
+                    <div class="project-img">
+                        <img src="./images/wanderNest.png" alt="Fitness App UI/UX">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://tourism-project-ten.vercel.app/" class="project-link">
+                                    <i class='bx bx-link-external'></i>
+                                </a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Wander Nest</h3>
+                        <p>A tourism management web app connecting tourists with local tour operators in Ghana. Features include tour listings, role-based access (Tourist, Operator, Admin)</p>
+                    </div>
+                </div>
+
+
+
+                <div class="project-card" data-category="web">
+                    <div class="project-img">
                         <img src="./images/project3.png" alt="Dama Teye Art Gallery">
                         <div class="project-overlay">
                             <div class="project-links">
@@ -270,13 +324,11 @@
                     <div class="project-info">
                         <h3>Dama Teye Art Gallery</h3>
                         <p>An elegant online gallery showcasing contemporary African art with smooth animations and a clean, modern design.</p>
-                        <div class="project-tags">
-                            <span>React</span>
-                            <span>CSS3</span>
-                            <span>GSAP</span>
-                        </div>
+
                     </div>
                 </div>
+
+                
                 
                 <!-- Project 2 -->
                 <div class="project-card" data-category="web">
@@ -296,39 +348,12 @@
                     <div class="project-info">
                         <h3>E-commerce Platform</h3>
                         <p>A full-featured online store with product catalog, cart functionality, and secure checkout process.</p>
-                        <div class="project-tags">
-                            <span>React</span>
-                            <span>Node.js</span>
-                            <span>MongoDB</span>
-                        </div>
+
                     </div>
                 </div>
                 
                 <!-- Project 3 -->
-                <div class="project-card" data-category="design">
-                    <div class="project-img">
-                        <img src="./images/project2.jpg" alt="Fitness App UI/UX">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link">
-                                    <i class='bx bx-link-external'></i>
-                                </a>
-                                <a href="#" class="project-link">
-                                    <i class='bx bxl-figma'></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Fitness App UI/UX</h3>
-                        <p>Mobile-first fitness application design with workout tracking and progress visualization.</p>
-                        <div class="project-tags">
-                            <span>Figma</span>
-                            <span>UI/UX</span>
-                            <span>Prototyping</span>
-                        </div>
-                    </div>
-                </div>
+                
                 
                 <!-- Project 4 -->
                 <div class="project-card" data-category="wordpress">
@@ -348,24 +373,12 @@
                     <div class="project-info">
                         <h3>Business Website</h3>
                         <p>Custom WordPress website with WooCommerce integration for a local business.</p>
-                        <div class="project-tags">
-                            <span>WordPress</span>
-                            <span>WooCommerce</span>
-                            <span>Elementor</span>
-                        </div>
+                       
                     </div>
                 </div>
             </div>
             
-            <!-- View More Button -->
-            <div class="view-more">
-                <a href="#" class="btn">View All Projects</a>
-            </div>
-        </div>
-    </section>
-                <img src="blog-7.jpg" alt="">
-            </div>
-            
+
         </div>
     </section>
     <!-- Contact Section -->
@@ -378,33 +391,7 @@
                 <div class="section-divider"></div>
             </div>
             
-            <div class="contact-container">
-                <!-- Contact Form -->
-                <div class="contact-form">
-                    <h3>Send Me a Message</h3>
-                    <form action="https://formspree.io/f/mwkgdkkq" method="post" id="contactForm">
-                        <div class="form-group">
-                            <input type="text" id="name" name="name" required>
-                            <label for="name">Your Name</label>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" id="email" name="email" required>
-                            <label for="email">Your Email</label>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" id="subject" name="subject" required>
-                            <label for="subject">Subject</label>
-                        </div>
-                        <div class="form-group">
-                            <textarea id="message" name="message" rows="5" required></textarea>
-                            <label for="message">Your Message</label>
-                        </div>
-                        <button type="submit" class="btn btn-primary">
-                            <i class='bx bx-paper-plane'></i> Send Message
-                        </button>
-                    </form>
-                </div>
-                
+            <div class="contact-card-container">
                 <!-- Contact Info -->
                 <div class="contact-info">
                     <h3>Contact Information</h3>
@@ -412,34 +399,80 @@
                     
                     <div class="info-item">
                         <div class="info-icon">
-                            <i class='bx bx-envelope'></i>
+                            <i class='bx bxs-phone'></i>
                         </div>
                         <div class="info-content">
-                            <h4>Email</h4>
+                            <a href="tel:+233537128494">+233 53 712 8494</a>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class='bx bxs-envelope'></i>
+                        </div>
+                        <div class="info-content">
                             <a href="mailto:dmus0636@gmail.com">dmus0636@gmail.com</a>
                         </div>
                     </div>
-                    
                     <div class="info-item">
                         <div class="info-icon">
-                            <i class='bx bx-phone-call'></i>
+                            <i class='bx bxs-map'></i>
                         </div>
                         <div class="info-content">
-                            <h4>Phone/WhatsApp</h4>
-                            <a href="https://wa.me/233537128949" target="_blank">+233 53 712 8949</a>
+                            <p>Accra, Ghana</p>
                         </div>
                     </div>
-                    
-                    <div class="contact-cta">
-                        <p>Prefer to schedule a call?</p>
-                        <a href="https://calendly.com/your-username" target="_blank" class="btn btn-outline">
-                            <i class='bx bx-calendar'></i> Schedule a Call
-                        </a>
-                    </div>
                 </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <form id="emailForm" onsubmit="sendEmail(); return false">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" name="name" placeholder="John Doe" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Your Email</label>
+                                <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" placeholder="I want to hire you" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Hello Michael, I'd like to discuss a project..."></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">Send Message</button>
+                    </form>
+                </div>
+                <script>
+                function sendEmail() {
+                    const name = document.getElementById('name').value;
+                    const email = document.getElementById('email').value;
+                    const subject = document.getElementById('subject').value;
+                    const message = document.getElementById('message').value;
+                    
+                    const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0A${message}`;
+                    
+                    window.location.href = `mailto:dmus0636@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+                    
+                    // Optional: Show a confirmation message
+                    alert('Your email client will open with a pre-filled message. Please click send to complete.');
+                    
+                    // Optional: Reset the form
+                    document.getElementById('emailForm').reset();
+                }
+                </script>
             </div>
         </div>
     </section>
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+        <i class='bx bx-up-arrow-alt'></i>
+    </button>
+
     <!-- Footer -->
     <div class="footer">
         <h2 class="font-semibold">NanoC≎des</h2>
@@ -474,30 +507,72 @@
         document.getElementById('current-year').textContent = new Date().getFullYear();
         
         // Form submission handling
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            // Add your form submission logic here
-            alert('Thank you for your message! I will get back to you soon.');
-            this.reset();
-        });
+        const form = document.getElementById('contactForm');
+        if (form) {
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                const submitBtn = form.querySelector('button[type="submit"]');
+                const originalBtnText = submitBtn.innerHTML;
+                
+                try {
+                    // Show loading state
+                    submitBtn.disabled = true;
+                    submitBtn.innerHTML = 'Sending...';
+                    
+                    // Send form data to Formspree
+                    const response = await fetch(form.action, {
+                        method: 'POST',
+                        body: new FormData(form),
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+                    
+                    if (response.ok) {
+                        // Show success message
+                        alert('Thank you for your message! I will get back to you soon.');
+                        form.reset();
+                    } else {
+                        const data = await response.json();
+                        if (data.errors) {
+                            throw new Error(data.errors.map(error => error.message).join(', '));
+                        } else {
+                            throw new Error('Something went wrong. Please try again later.');
+                        }
+                    }
+                } catch (error) {
+                    console.error('Form submission error:', error);
+                    alert('Failed to send message: ' + error.message);
+                } finally {
+                    // Reset button state
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalBtnText;
+                }
+            });
+        }
         
         // Scroll to top functionality
         const scrollTop = document.getElementById('scroll-top');
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                scrollTop.classList.add('show');
-            } else {
-                scrollTop.classList.remove('show');
-            }
-        });
-        
-        scrollTop.addEventListener('click', (e) => {
-            e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
+        if (scrollTop) {
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    scrollTop.classList.add('show');
+                } else {
+                    scrollTop.classList.remove('show');
+                }
             });
-        });
+            
+            scrollTop.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
     </script>
+  <!-- Link To JS -->
+  <script src="./js/main.js"></script>
 </body>
 </html>
