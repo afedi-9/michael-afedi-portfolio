@@ -40,6 +40,12 @@ body {
   min-height: 100vh;
 }
 
+/* Ensure body.dark also updates theme variables for consistency */
+body.dark {
+  --text-color: #fff;
+  --bg-color: #0f0c27;
+}
+
 /* Loading Animation */
 #loading {
   position: fixed;
@@ -767,6 +773,10 @@ body.active header.scrolled {
 body.dark .home {
   background: linear-gradient(135deg, #0a192f 0%, #112240 100%);
 }
+
+body.active .home {
+  background: linear-gradient(135deg, #0a192f 0%, #112240 100%);
+}
 .home-img {
   order: 3;
  
@@ -925,6 +935,11 @@ body.dark .home {
 }
 
 body.dark .about-section {
+  background: linear-gradient(135deg, #0a192f 0%, #112240 100%);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+body.active .about-section {
   background: linear-gradient(135deg, #0a192f 0%, #112240 100%);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }

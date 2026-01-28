@@ -1,10 +1,27 @@
-// Hide loading animation when page is fully loaded
-window.addEventListener('load', function() {
-    const loading = document.getElementById('loading');
-    if (loading) {
-        loading.style.display = 'none';
+// Hide loading animation when page is ready
+(function() {
+    let loadingHidden = false;
+
+    function hideLoading() {
+        if (loadingHidden) return;
+        const loading = document.getElementById('loading');
+        if (!loading) {
+            loadingHidden = true;
+            return;
+        }
+
+        loadingHidden = true;
+        loading.classList.add('fade-out');
+
+        setTimeout(() => {
+            loading.style.display = 'none';
+        }, 600);
     }
-});
+
+    document.addEventListener('DOMContentLoaded', hideLoading);
+    window.addEventListener('load', hideLoading);
+    setTimeout(hideLoading, 2500);
+})();
 
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
@@ -44,234 +61,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Mobile menu toggle with animation
-    if (menu && navbar && overlay) {
-        let isMenuOpen = false;
-        let isAnimating = false;
-        const ANIMATION_DURATION = 300; // ms
-        
-        // Make sure menu icon is visible on mobile and hidden on desktop
-        function updateMenuVisibility() {
-            if (window.innerWidth <= 991) {
-                menu.style.display = 'flex';
-                navbar.style.display = 'none';
-            } else {
-                menu.style.display = 'none';
-                navbar.style.display = 'flex';
-            }
-        }
-        
-        // Initial setup
-        updateMenuVisibility();
-        window.addEventListener('resize', updateMenuVisibility);
-        
-        // Initialize menu state based on screen size
-        function initMenu() {
-            if (window.innerWidth > 991) {
-                // Desktop view - always show navbar
-                navbar.style.display = 'flex';
-                navbar.style.transform = 'none';
-                overlay.style.display = 'none';
-                document.body.style.overflow = '';
-                navbar.classList.remove('active');
-                overlay.classList.remove('active');
-                menu.classList.remove('active');
-                isMenuOpen = false;
-            } else {
-                // Mobile view - hide by default
-                navbar.style.display = 'flex';
-                navbar.style.transform = 'translateX(100%)';
-                overlay.style.display = 'none';
-                navbar.classList.remove('active');
-                overlay.classList.remove('active');
-                menu.classList.remove('active');
-                isMenuOpen = false;
-            }
-        }
-        
-        // Call once on load
-        initMenu();
-        
-        // Handle window resize
-        function handleResize() {
-            if (window.innerWidth > 991) {
-                // Desktop view
-                navbar.style.display = 'flex';
-                navbar.style.transform = 'none';
-                overlay.style.display = 'none';
-                document.body.style.overflow = '';
-                navbar.classList.remove('active');
-                overlay.classList.remove('active');
-                menu.classList.remove('active');
-                isMenuOpen = false;
-            } else if (isMenuOpen) {
-                // If mobile menu was open before resize
-                navbar.style.display = 'flex';
-                navbar.style.transform = 'translateX(0)';
-                overlay.style.display = 'block';
-                document.body.style.overflow = 'hidden';
-                navbar.classList.add('active');
-                overlay.classList.add('active');
-                menu.classList.add('active');
-            } else {
-                // Mobile view - hide menu
-                navbar.style.display = 'flex';
-                navbar.style.transform = 'translateX(100%)';
-                overlay.style.display = 'none';
-                document.body.style.overflow = '';
-                navbar.classList.remove('active');
-                overlay.classList.remove('active');
-                menu.classList.remove('active');
-            }
-        }
-        
-        // Add resize event listener
-        window.addEventListener('resize', handleResize);
-        
-        // Variables are already declared at the top of the if block
-        
-        // Function to show menu
-        const showMenu = () => {
-            if (isAnimating || isMenuOpen) return;
-            isAnimating = true;
-            isMenuOpen = true;
-            
-            // Show overlay and navbar
-            overlay.style.display = 'block';
-            navbar.style.display = 'flex';
-            
-            // Add active classes
-            navbar.classList.add('active');
-            overlay.classList.add('active');
-            menu.classList.add('active');
-            menu.setAttribute('aria-expanded', 'true');
-            document.body.style.overflow = 'hidden';
-            
-            // Prevent scrolling on body
-            document.documentElement.style.overflow = 'hidden';
-            
-            isAnimating = false;
-        };
-        
-        // Function to hide menu
-        const hideMenu = () => {
-            if (isAnimating || !isMenuOpen) return;
-            isAnimating = true;
-            isMenuOpen = false;
-            
-            // Remove active classes
-            navbar.classList.remove('active');
-            overlay.classList.remove('active');
-            menu.classList.remove('active');
-            menu.setAttribute('aria-expanded', 'false');
-            
-            // Re-enable scrolling
-            document.documentElement.style.overflow = '';
-            
-            // Hide overlay after transition
-            setTimeout(() => {
-                overlay.style.display = 'none';
-                navbar.style.display = 'none';
-                document.body.style.overflow = '';
-                isAnimating = false;
-            }, ANIMATION_DURATION);
-        };
-        
-        // Toggle menu function
-        const toggleMenu = (event) => {
-            if (event) {
-                event.preventDefault();
-                event.stopPropagation();
-            }
-            
-            // Prevent toggling during animation
-            if (isAnimating) return;
-            
-            if (isMenuOpen) {
-                hideMenu();
-            } else {
-                showMenu();
-            }
-        };
-        
-        // Close menu when clicking outside
-        const closeOnClickOutside = (event) => {
-            const isClickInsideMenu = navbar.contains(event.target);
-            const isClickOnMenuIcon = menu.contains(event.target);
-            
-            if (isMenuOpen && !isClickInsideMenu && !isClickOnMenuIcon) {
-                hideMenu();
-            }
-        };
-        
-        // Close menu on Escape key
-        const closeOnEscape = (event) => {
-            if (event.key === 'Escape' && isMenuOpen) {
-                hideMenu();
-            }
-        };
-        
-        // Add event listeners
-        menu.addEventListener('click', (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            toggleMenu();
-        });
-        
-        // Close menu when clicking on nav links
-        navLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                
-                const targetId = link.getAttribute('href');
-                
-                // Only hide menu if it's open
-                if (isMenuOpen) {
-                    hideMenu();
-                }
-                
-                // Then scroll to section after a small delay
-                if (targetId && targetId !== '#') {
-                    setTimeout(() => {
-                        const targetSection = document.querySelector(targetId);
-                        if (targetSection) {
-                            window.scrollTo({
-                                top: targetSection.offsetTop - 80, // Adjust for header
-                                behavior: 'smooth'
-                            });
-                        }
-                    }, isMenuOpen ? ANIMATION_DURATION / 2 : 0);
-                }
-            });
-        });
-        
-        // Close menu when clicking overlay
-        overlay.addEventListener('click', hideMenu);
-        
-        // Initialize menu state
-        navbar.style.display = 'none';
-        overlay.style.display = 'none';
-        
-        // Add animation delay to menu items
-        navLinks.forEach((link, index) => {
-            link.style.setProperty('--i', index);
-            link.addEventListener('click', () => {
-                if (isMenuOpen) {
-                    // Add a small delay before closing to allow the click to register
-                    setTimeout(toggleMenu, 300);
-                }
-            });
-        });
-        
-        // Prevent body scroll when menu is open
-        document.body.addEventListener('touchmove', (e) => {
-            if (isMenuOpen) {
-                e.preventDefault();
-            }
-        }, { passive: false });
-    }
-    
     // Handle scroll events with throttle for better performance
     let isScrolling;
     function handleScroll() {
@@ -301,14 +90,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     backToTopButton.style.visibility = 'hidden';
                 }
             }
-            
-            // Close mobile menu on scroll if open
-            if (navbar && navbar.classList.contains('active')) {
-                // Add a small delay to allow scroll to complete
-                setTimeout(() => {
-                    document.querySelector('#menu-icon').click();
-                }, 100);
-            }
         }, 50); // Adjust the timeout as needed (in milliseconds)
     }
     
@@ -316,17 +97,44 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', handleScroll);
     
     // Dark Mode Toggle
-    let darkmode = document.querySelector('#darkmode');
-    if (darkmode) {
-        darkmode.onclick = () => {
-            if (darkmode.classList.contains('bx-moon')) {
-                darkmode.classList.replace('bx-moon', 'bx-sun');
-                document.body.classList.add('active');
-            } else {
-                darkmode.classList.replace('bx-sun', 'bx-moon');
-                document.body.classList.remove('active');
+    const THEME_STORAGE_KEY = 'theme';
+    const darkmode = document.querySelector('#darkmode');
+
+    function setDarkMode(isDark) {
+        document.body.classList.toggle('active', isDark);
+        document.body.classList.toggle('dark', isDark);
+
+        if (!darkmode) return;
+        if (isDark) {
+            if (darkmode.classList.contains('bx-moon')) darkmode.classList.replace('bx-moon', 'bx-sun');
+            if (darkmode.classList.contains('bxs-moon')) darkmode.classList.replace('bxs-moon', 'bxs-sun');
+            if (!darkmode.classList.contains('bx-sun') && !darkmode.classList.contains('bxs-sun')) {
+                darkmode.classList.add('bxs-sun');
             }
-        };
+        } else {
+            if (darkmode.classList.contains('bx-sun')) darkmode.classList.replace('bx-sun', 'bx-moon');
+            if (darkmode.classList.contains('bxs-sun')) darkmode.classList.replace('bxs-sun', 'bxs-moon');
+            if (!darkmode.classList.contains('bx-moon') && !darkmode.classList.contains('bxs-moon')) {
+                darkmode.classList.add('bxs-moon');
+            }
+        }
+    }
+
+    function getInitialTheme() {
+        const saved = localStorage.getItem(THEME_STORAGE_KEY);
+        if (saved === 'dark') return true;
+        if (saved === 'light') return false;
+        return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    }
+
+    setDarkMode(getInitialTheme());
+
+    if (darkmode) {
+        darkmode.addEventListener('click', () => {
+            const isDark = !document.body.classList.contains('active');
+            setDarkMode(isDark);
+            localStorage.setItem(THEME_STORAGE_KEY, isDark ? 'dark' : 'light');
+        });
     }
     
     // Smooth scroll for all anchor links
