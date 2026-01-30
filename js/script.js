@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelector('.nav-links');
     const navItems = document.querySelectorAll('.nav-link');
     const darkModeToggle = document.querySelector('#darkmode');
+    const backToTopButton = document.getElementById('backToTop');
     
     // Toggle mobile menu
     if (hamburger) {
@@ -77,24 +78,16 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             
             // Show/hide back to top button with fade effect
-            const backToTopButton = document.getElementById('backToTop');
             if (backToTopButton) {
                 const shouldShowButton = window.pageYOffset > 300;
-                backToTopButton.style.transition = 'opacity 0.3s ease, visibility 0.3s ease';
-                
-                if (shouldShowButton) {
-                    backToTopButton.style.opacity = '1';
-                    backToTopButton.style.visibility = 'visible';
-                } else {
-                    backToTopButton.style.opacity = '0';
-                    backToTopButton.style.visibility = 'hidden';
-                }
+                backToTopButton.classList.toggle('show', shouldShowButton);
             }
         }, 50); // Adjust the timeout as needed (in milliseconds)
     }
     
     // Add scroll event listener
     window.addEventListener('scroll', handleScroll);
+    handleScroll();
     
     // Dark Mode Toggle
     const THEME_STORAGE_KEY = 'theme';
@@ -158,7 +151,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Back to Top Button
-    const backToTopButton = document.getElementById('backToTop');
     if (backToTopButton) {
         backToTopButton.addEventListener('click', (e) => {
             e.preventDefault();
