@@ -61,20 +61,22 @@ document.addEventListener('DOMContentLoaded', function() {
   const menuIcon = document.querySelector('#menu-icon');
   const navbar = document.querySelector('.navbar');
 
-  menuIcon.addEventListener('click', () => {
-    navbar.classList.toggle('active');
-    menuIcon.classList.toggle('bx-x'); // Changes icon to an 'X'
-  });
-
-  // Close menu when a nav link is clicked
-  const navLinksInMenu = document.querySelectorAll('.navbar a');
-
-  navLinksInMenu.forEach(link => {
-    link.addEventListener('click', () => {
-      if (navbar.classList.contains('active')) {
-        navbar.classList.remove('active');
-        menuIcon.classList.remove('bx-x');
-      }
+  if (menuIcon && navbar) {
+    menuIcon.addEventListener('click', () => {
+      navbar.classList.toggle('active');
+      menuIcon.classList.toggle('bx-x'); // Changes icon to an 'X'
     });
-  });
+
+    // Close menu when a nav link is clicked
+    const navLinksInMenu = document.querySelectorAll('.navbar a');
+
+    navLinksInMenu.forEach(link => {
+      link.addEventListener('click', () => {
+        if (navbar.classList.contains('active')) {
+          navbar.classList.remove('active');
+          menuIcon.classList.remove('bx-x');
+        }
+      });
+    });
+  }
 });
